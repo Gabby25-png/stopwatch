@@ -1,0 +1,163 @@
+@import url(https://www.behance.net/gallery/131661811/Javascript-Stopwatch);
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--bg-color, #b32a25);
+    color: var(--text-color, #fff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background 0.3s, color 0.3s;
+}
+
+:root {
+    --bg-color: #b32a25;
+    --text-color: #fff;
+    --button-bg: #ffe066;
+    --button-text: #fff;
+    --lap-bg: #eee;
+    --lap-text: #333;
+}
+
+.dark-theme {
+    --bg-color: #222;
+    --text-color: #ffe066;
+    --button-bg: #333;
+    --button-text: #ffe066;
+    --lap-bg: #444;
+    --lap-text: #ffe066;
+}
+
+.stopwatch-ui {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    max-width: 500px;
+    padding: 0 12px;
+}
+
+.clear-label {
+    color: var(--text-color);
+    font-size: 56px;
+    font-weight: 400;
+    margin-bottom: 24px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.display {
+    font-size: 64px;
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--text-color);
+    font-weight: 400;
+    margin-bottom: 32px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.controls {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.startstop-btn, .lap-btn {
+    background: var(--button-bg);
+    color: var(--button-text);
+    font-size: 28px;
+    font-weight: 500;
+    border: none;
+    border-radius: 100px;
+    width: 220px;
+    height: 80px;
+    padding: 0 32px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    cursor: pointer;
+    transition: box-shadow 0.2s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lap-btn {
+    width: 120px;
+    font-size: 20px;
+    background: var(--button-bg);
+    color: var(--button-text);
+}
+
+.startstop-btn:hover, .lap-btn:hover {
+    box-shadow: 0 12px 32px rgba(0,0,0,0.22);
+    transform: scale(1.04);
+}
+
+
+.laps-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 320px;
+    text-align: left;
+}
+
+.laps-list li {
+    background: var(--lap-bg);
+    margin-bottom: 6px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--lap-text);
+    font-size: 17px;
+}
+
+/* Theme toggle button */
+.theme-toggle-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 8px;
+}
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+@media (max-width: 600px) {
+    .stopwatch-ui {
+        max-width: 100vw;
+        padding: 0 4vw;
+    }
+    .display {
+        font-size: 32px;
+        margin-bottom: 24px;
+    }
+    .clear-label {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+    .startstop-btn, .lap-btn {
+        width: 40vw;
+        min-width: 120px;
+        height: 48px;
+        font-size: 16px;
+        padding: 0 8vw;
+    }
+    .laps-list {
+        max-width: 90vw;
+        font-size: 13px;
+    }
+}
+
+.startstop-btn:hover {
+    box-shadow: 0 12px 32px rgba(0,0,0,0.22);
+    transform: scale(1.04);
+}
