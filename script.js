@@ -11,6 +11,7 @@ let lapCount = 1;
 const display = document.getElementById('display');
 const startStopBtn = document.getElementById('startstop-btn');
 const clearLabel = document.querySelector('.clear-label');
+const resetBtn = document.getElementById('reset-btn');
 const lapBtn = document.getElementById('lap-btn');
 const lapsList = document.getElementById('laps-list');
 const themeToggle = document.getElementById('theme-toggle');
@@ -25,8 +26,14 @@ startStopBtn.addEventListener('click', () => {
     }
 });
 
-// Reset timer on CLEAR label click
-clearLabel.addEventListener('click', resetTimer);
+// Reset timer on Reset button click
+resetBtn.addEventListener('click', resetTimer);
+
+// Optionally, keep CLEAR for clearing laps only
+clearLabel.addEventListener('click', () => {
+    lapsList.innerHTML = '';
+    lapCount = 1;
+});
 
 // Lap button
 lapBtn.addEventListener('click', recordLap);

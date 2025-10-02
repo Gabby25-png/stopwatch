@@ -43,9 +43,32 @@ body {
     color: var(--text-color);
     font-size: 56px;
     font-weight: 400;
-    margin-bottom: 24px;
+    margin-bottom: 8px;
     letter-spacing: 2px;
     text-align: center;
+}
+
+.reset-btn {
+    background: var(--button-bg);
+    color: var(--button-text);
+    font-size: 24px;
+    font-weight: 500;
+    border: none;
+    border-radius: 100px;
+    width: 120px;
+    height: 48px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    cursor: pointer;
+    transition: box-shadow 0.2s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reset-btn:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    transform: scale(1.06);
 }
 
 .display {
